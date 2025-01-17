@@ -22,7 +22,6 @@ namespace ProductAPI
             {
                 return BadRequest("Le produit est requis.");
             }
-
             product.Id = _products.Max(p => p.Id) + 1;
             _products.Add(product);
             return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
